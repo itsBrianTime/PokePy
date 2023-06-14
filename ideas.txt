@@ -1,0 +1,44 @@
+Pokemon Type effectiveness game
+
+- Use pygame
+- Use PokeAPI
+
+how it works:
+
+the app will start off with two Pokemon fighting (red: Gengar, Nidorino) (blue: Gengar, Jigglypuff)
+
+The user has a menu like pokemon emerald/sapphire/ruby
+"What should I do?" 4 options: Fight, Defend, Chng pkmn, <tbd> (status maybe?)
+
+fight: 
+	brings up a menu like pokemon where you can see 4 moves. However, this is just 4 types and you can scroll down and choose from any of the 18 types. If you click one, it will attack the wild pokemon, and display the move's effectivness and by how much (ex: x2.0, x4.0)
+
+defend:
+	same as fight, but for the wild pokemon. You choose from the moves, and then it'll show how effective it was against the player's pokemon.
+
+chng pkmn: 
+	brings up a menu where you can change each pokemon, the player and wild. it should be a drop down where you can also type into it a name. click submit and the pokemon should change.
+
+<options>:
+	none so far
+
+It should show status bars like in the game. Pokemon name, a gender symbol, lv:50 and a health bar. 
+
+The sprites should change when the pokemon changes. could have shinies appear with a random chance (like the real game, but maybe lower so people actually see them)
+
+Should use ruby and sapphire font
+
+should essentially look like you're having a battle from ruby/sapphire. should have a background, should have circles on the ground where the pokemon stand. should have a dialogue box that gives the user information
+
+If time, and ability, permits:
+- could have animations when pokemon appear/attack/take damage/ ect
+- could switch types in attack list to actual moves the pokmeon could use
+- could use options to set levels of pokemon, changing their stats
+- could emulate a real battle and have real damage calculated and shown to the player
+- could emulate a real battle with chances of status effects being shown
+- could factor in pokemon abilites
+- could have pokeballs and real catch rates based off of the many factors
+- could allow the player to switch to different generations, thus pulling different
+pokemon, moves, types and other calculations that are different
+- could make the options menu a menu for editing pokmeon, thus completeing the simluation. The user could change everything about all stats, moves, generation, abilites, status effects, EVs, IVs (that are actually possible in the game). They could also randomize the wild pokemon in a realistic way (shiny included).
+- could differentiate between wild and trainer pokmeon. 
