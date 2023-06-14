@@ -15,13 +15,15 @@ import pokemon
 WIN = pygame.display.set_mode((c.SCREEN_WIDTH, c.SCREEN_HEIGHT))
 pygame.display.set_caption("PokePy Test")
 player_image: pygame.surface
+player_data: pokemon.Pokemon
 enemy_image: pygame.surface
+enemy_data: pokemon.Pokemon
 
 
 def draw_window():
     """draws the window every time"""
 
-    WIN.fill(c.TYPE_GHOST_COLOR)
+    WIN.fill(c.BLUE)
     draw_sprites()
     pygame.display.update()
 
@@ -48,15 +50,30 @@ def get_sprite_from_url(url: str) -> pygame.surface:
     return img
 
 
-player_data = pokemon.Pokemon(None, 1)
-player_image: pygame.surface = get_sprite_from_url(
-    player_data.get_sprites().get("back_default")
-)
+def change_pokemon_by_string(pokemon_name: str, sprite_name: str):
+    """
+    returns new pokemon class data and image based on the string inputs. Used to change
+    pokemon by using their name and what sprite is desired.
+    """
 
-enemy_data = pokemon.Pokemon(None, 4)
-enemy_image: pygame.surface = get_sprite_from_url(
-    enemy_data.get_sprites().get("front_default")
-)
+    data: pokemon.Pokemon = pokemon.Pokemon(pokemon_name)
+    image: pygame.surface = get_sprite_from_url(data.get_sprites().get(sprite_name))
+    return data, image
+
+
+def change_pokemon_by_id(pokemon_id: int, sprite_name: str):
+    """
+    returns new pokemon class data and image based on pokemon id and sprite string. Used to change
+    pokemon by using their pokedex id number and what sprite is desired.
+    """
+
+    data: pokemon.Pokemon = pokemon.Pokemon(0, pokemon_id)
+    image: pygame.surface = get_sprite_from_url(data.get_sprites().get(sprite_name))
+    return data, image
+
+
+player_data, player_image = change_pokemon_by_id(94, "back_default")
+enemy_data, enemy_image = change_pokemon_by_string("nidorino", "front_default")
 
 
 def main():

@@ -8,10 +8,11 @@ FPS: int = 60
 POKEMON_WIDTH = 200
 POKEMON_HEIGHT = 200
 
+RED: tuple = (190, 65, 30)
 GREEN: tuple = (65, 190, 30)
+BLUE: tuple = (30, 65, 190)
 WHITE: tuple = (255, 255, 255)
 BLACK: tuple = (0, 0, 0)
-RED: tuple = (190, 65, 30)
 
 TYPE_BUG_COLOR: str = "#94BC4A"
 TYPE_DARK_COLOR: str = "#736C75"
