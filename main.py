@@ -21,7 +21,7 @@ enemy_image: pygame.surface
 def draw_window():
     """draws the window every time"""
 
-    WIN.fill(c.WHITE)
+    WIN.fill(c.TYPE_GHOST_COLOR)
     draw_sprites()
     pygame.display.update()
 
