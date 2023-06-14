@@ -13,25 +13,27 @@ import pokemon
 # the generator class to change them if needed.
 
 WIN = pygame.display.set_mode((c.SCREEN_WIDTH, c.SCREEN_HEIGHT))
-pygame.display.set_caption("Pokemon Type Test")
-gengar_image: pygame.surface
-nido_image: pygame.surface
+pygame.display.set_caption("PokePy Test")
+player_image: pygame.surface
+enemy_image: pygame.surface
 
 
 def draw_window():
     """draws the window every time"""
+
     WIN.fill(c.WHITE)
     draw_sprites()
-    # pygame.display.flip()
     pygame.display.update()
 
 
 def draw_sprites():
     """Draws the player and wild Pokemon sprites"""
-    gengar = pygame.transform.scale(gengar_image, (c.POKEMON_WIDTH, c.POKEMON_HEIGHT))
-    WIN.blit(gengar, (0, 200))
-    nidorino = pygame.transform.scale(nido_image, (c.POKEMON_WIDTH, c.POKEMON_HEIGHT))
-    WIN.blit(nidorino, (300, 0))
+
+    player = pygame.transform.scale(player_image, (c.POKEMON_WIDTH, c.POKEMON_HEIGHT))
+    WIN.blit(player, (0, 200))
+
+    enemy = pygame.transform.scale(enemy_image, (c.POKEMON_WIDTH, c.POKEMON_HEIGHT))
+    WIN.blit(enemy, (300, 0))
 
 
 def get_sprite_from_url(url: str) -> pygame.surface:
@@ -39,21 +41,21 @@ def get_sprite_from_url(url: str) -> pygame.surface:
     Gets a pokemon sprite from a url and returns
     it as a pygame surface.
     """
+
     img_request = requests.get(url, timeout=3)
     img_data = io.BytesIO(img_request.content)
     img = pygame.image.load(img_data)
     return img
 
 
-gengar_data = pokemon.Pokemon("gengar")
-# print(gengar_data.get_sprites())
-gengar_image: pygame.surface = get_sprite_from_url(
-    gengar_data.get_sprites().get("back_default")
+player_data = pokemon.Pokemon(None, 1)
+player_image: pygame.surface = get_sprite_from_url(
+    player_data.get_sprites().get("back_default")
 )
 
-nido_data = pokemon.Pokemon("nidoking")
-nido_image: pygame.surface = get_sprite_from_url(
-    nido_data.get_sprites().get("front_default")
+enemy_data = pokemon.Pokemon(None, 4)
+enemy_image: pygame.surface = get_sprite_from_url(
+    enemy_data.get_sprites().get("front_default")
 )
 
 
